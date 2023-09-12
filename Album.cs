@@ -1,7 +1,12 @@
 ﻿class Album
 {
+    public Album(string nome)
+    {
+        Nome = nome;
+    }
+
     private List<Musica> musicas = new();
-    public string Nome { get; set; }
+    public string Nome { get; }
     public int DuracaoTotal => musicas.Sum(m => m.Duracao);
 
     public void AdicionarMusica(Musica musica)
@@ -16,6 +21,6 @@
         {
             Console.WriteLine($"Música: {musica.Nome}");
         }
-        Console.WriteLine($"Para ouvir este álbum inteiro você precisa de {DuracaoTotal} segundos");
+        Console.WriteLine($"\nPara ouvir este álbum inteiro você precisa de {DuracaoTotal} segundos");
     }
 }
